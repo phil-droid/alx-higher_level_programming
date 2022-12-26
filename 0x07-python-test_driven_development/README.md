@@ -1,0 +1,1 @@
+Test-Driven Development(TDD) recommends writing tests that would check the functionality of your code prior to your writing the actual code. Only when you are happy with your tests and the features it tests, do you begin to write the actual code in order to satisfy the conditions imposed by the test that would allow them to pass.
