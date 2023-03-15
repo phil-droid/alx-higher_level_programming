@@ -3,20 +3,21 @@
 
 const args = process.argv;
 
-function secondBiggestInteger(...args) {
-  // Sort the arguments in descending order
-  args.sort((a, b) => b - a);
-
-  // If there are no arguments, return 0
-  if (args.length === 0) {
-    return 0;
+if (isNaN(args[2])) {
+  console.log('0');
+} else if (args.length === 3) {
+  console.log('0');
+} else {
+  let first = parseInt(args[2], 10);
+  let second = parseInt(args[3], 10);
+  for (let i = 2; i < args.length; i++) {
+    if (parseInt(args[i], 10) > first) {
+      second = first;
+      first = parseInt(args[i], 10);
+    }
+    if (parseInt(args[i], 10) > second && parseInt(args[i], 10) < first) {
+      second = parseInt(args[i], 10);
+    }
   }
-
-  // If there is only one argument, return 0
-  if (args.length === 1) {
-    return 0;
-  }
-
-  // Otherwise, return the second argument
-  return args[1];
+  console.log(second);
 }
